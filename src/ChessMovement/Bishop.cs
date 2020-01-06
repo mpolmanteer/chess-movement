@@ -6,10 +6,11 @@ namespace ChessMovement
 	public class Bishop : IPiece
 	{
 		public bool IsWhite { get; set; }
-
-		public Bishop(bool isWhite)
+		private IDiagonalMovement diagonalMovement;
+		public Bishop(bool isWhite, IDiagonalMovement diagonalMovement)
 		{
 			IsWhite = isWhite;
+			this.diagonalMovement = diagonalMovement;
 		}
 
 		public List<Location> GetValidMoves(Board board, Location location)

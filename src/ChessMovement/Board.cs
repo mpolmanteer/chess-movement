@@ -35,21 +35,21 @@ namespace ChessMovement
             }
         }
 
-        public bool? HasOpponent(bool isWhite, Location location)
+        public int GetSquareStatus(bool isWhite, Location location)
         {
             if (Grid[location.File, location.Rank].Piece == null)
             {
-                return null;
+                return (int)SquareStatus.Empty;
             }
             else 
             {
                 if (Grid[location.File, location.Rank].Piece.IsWhite == isWhite)
                 {
-                    return false;
+                    return (int)SquareStatus.Friend;
                 }
                 else
                 {
-                    return true;
+                    return (int)SquareStatus.Foe;
                 }
             }
         }

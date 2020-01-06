@@ -20,7 +20,9 @@ namespace ChessMovement
            
                 try
                 {
-                    var piece = PieceFactory.CreatePiece(input, true);
+                    var pieceFactory = new PieceFactory();
+                    var piece = pieceFactory.CreatePiece(input, true);
+
                     var pieceLocation = new Location(0, 0);
 
                     var moves = piece.GetValidMoves(board, pieceLocation);

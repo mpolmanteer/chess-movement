@@ -6,10 +6,13 @@ namespace ChessMovement
 	public class Pawn : IPiece
 	{
 		public bool IsWhite { get; set; }
-
-		public Pawn(bool isWhite)
+		private ILateralMovement lateralMovement;
+		private IDiagonalMovement diagonalMovement;
+		public Pawn(bool isWhite, ILateralMovement lateralMovement, IDiagonalMovement diagonalMovement)
 		{
 			IsWhite = isWhite;
+			this.lateralMovement = lateralMovement;
+			this.diagonalMovement = diagonalMovement;
 		}
 
 		public List<Location> GetValidMoves(Board board, Location location)
