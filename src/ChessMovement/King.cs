@@ -17,8 +17,7 @@ namespace ChessMovement
 
 		public List<Location> GetValidMoves(Board board, Location location)
 		{
-			var moves = new List<Location>();
-			return moves;
+			throw new NotImplementedException();
 		}
 	}
 }

@@ -7,7 +7,7 @@ namespace ChessMovement
     public class Board
     {
         public int Size { get; set; }
-        public Square[,] Grid { get; set; }
+        private Square[,] Grid { get; set; }
 
         public Board (int size) 
         {
@@ -52,6 +52,11 @@ namespace ChessMovement
                     return SquareStatus.Foe;
                 }
             }
+        }
+
+        public void AddPieceToSquare(IPiece piece, Location location)
+        {
+            Grid[location.File, location.Rank].Piece = piece;
         }
     }
 }

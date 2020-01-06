@@ -6,22 +6,22 @@ namespace ChessMovement
 {
     class PawnDiagonalMovement : IDiagonalMovement
     {
-        public List<Location> MoveNorthEast(Board board, Location location, int maxMoves)
+        public List<Location> MoveNorthEast(Board board, Location location, bool isWhite, int maxMoves)
         {
             throw new NotImplementedException();
         }
 
-        public List<Location> MoveNorthWest(Board board, Location location, int maxMoves)
+        public List<Location> MoveNorthWest(Board board, Location location, bool isWhite, int maxMoves)
         {
             throw new NotImplementedException();
         }
 
-        public List<Location> MoveSouthEast(Board board, Location location, int maxMoves)
+        public List<Location> MoveSouthEast(Board board, Location location, bool isWhite, int maxMoves)
         {
             throw new NotImplementedException();
         }
 
-        public List<Location> MoveSouthWest(Board board, Location location, int maxMoves)
+        public List<Location> MoveSouthWest(Board board, Location location, bool isWhite, int maxMoves)
         {
             throw new NotImplementedException();
         }

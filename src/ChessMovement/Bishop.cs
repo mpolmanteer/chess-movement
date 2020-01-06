@@ -15,7 +15,15 @@ namespace ChessMovement
 
 		public List<Location> GetValidMoves(Board board, Location location)
 		{
-			throw new NotImplementedException();
+			var validMoves = new List<Location>();
+
+			validMoves.AddRange(diagonalMovement.MoveNorthEast(board, location, IsWhite, board.Size));
+			validMoves.AddRange(diagonalMovement.MoveNorthWest(board, location, IsWhite, board.Size));
+			validMoves.AddRange(diagonalMovement.MoveSouthEast(board, location, IsWhite, board.Size));
+			validMoves.AddRange(diagonalMovement.MoveSouthWest(board, location, IsWhite, board.Size));
+
+			return validMoves;
+
 		}
 	}
 }
