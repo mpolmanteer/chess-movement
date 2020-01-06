@@ -12,22 +12,25 @@ namespace ChessMovement
             {
                 Console.WriteLine("Enter Piece Type: Bishop, King, Knight, Pawn, Queen, Rook or 'q' to quit");
 
-                var input = Console.ReadLine().ToLowerInvariant().Trim();
+                var inputPiece = Console.ReadLine().ToLowerInvariant().Trim();
                 {
-                    if (input == "q")
+                    if (inputPiece == "q")
                         break;
                 }
            
                 try
                 {
                     var pieceFactory = new PieceFactory();
-                    var piece = pieceFactory.CreatePiece(input, true);
+                    var piece = pieceFactory.CreatePiece(inputPiece, true);
 
-                    var pieceLocation = new Location(0, 0);
+                    Console.WriteLine("Enter Piece Location in Chess notation (a1) to (h8)");
+                    var inputLocation = Console.ReadLine().ToLowerInvariant().Trim();
 
-                    var moves = piece.GetValidMoves(board, pieceLocation);
-                    var joined = string.Join(",", moves);
-                    Console.WriteLine(joined);
+                    var pieceLocation = Location.ParseChessNotation(inputLocation);
+                    var validMoves = piece.GetValidMoves(board, pieceLocation);
+
+                    Console.WriteLine("Possible Moves: "+ Location.GetAvailableLocations(validMoves));
+
                 }
                 catch (ArgumentException ex)
                 {

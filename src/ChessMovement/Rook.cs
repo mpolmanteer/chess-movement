@@ -20,8 +20,8 @@ namespace ChessMovement
 
 			validMoves.AddRange(_lateralMovement.MoveEast(board, location, IsWhite, board.Size));
 			validMoves.AddRange(_lateralMovement.MoveNorth(board, location, IsWhite, board.Size));
-			//validMoves.AddRange(_lateralMovement.MoveWest(board, location, IsWhite, board.Size));
-			//validMoves.AddRange(_lateralMovement.MoveSouth(board, location, IsWhite, board.Size));
+			validMoves.AddRange(_lateralMovement.MoveWest(board, location, IsWhite, board.Size));
+			validMoves.AddRange(_lateralMovement.MoveSouth(board, location, IsWhite, board.Size));
 
 			return validMoves;
 

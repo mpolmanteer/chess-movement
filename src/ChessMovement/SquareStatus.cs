@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ChessMovement
 {
-    public  enum SquareStatus
+    public enum SquareStatus
     {
         Empty,
         Friend,
